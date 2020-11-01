@@ -5,7 +5,7 @@ const api = axios.create({
 });
 
 export const coinApi = {
-    tickers: () => api.get("tickers"),
+    prices: () => api.get("tickers"),
     exchanges: () => api.get("exchanges"),
     coins: () => api.get("coins"),
 }
