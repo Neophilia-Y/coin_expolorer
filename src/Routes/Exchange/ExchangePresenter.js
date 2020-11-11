@@ -1,11 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Loader from "../../Components/Loader";
-import Section from "../../Components/Section";
+import Exchanges from "../../Components/Exchanges";
 
 const ExchangePresenter = ({ loading, error, exchange }) => (loading ? (<Loader />) : (
-    exchange && exchange.length && (<Section title="Exchange">{exchange.map(ex => (<span>{ex.id}</span>))}</Section>))
-);
+    exchange && exchange.length && (
+        exchange.map(ex => (<Exchanges key={ex.id} {...ex} />)
+        )
+    )
+));
 
 ExchangePresenter.propTypes = {
     loading: PropTypes.bool.isRequired,
